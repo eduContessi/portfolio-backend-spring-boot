@@ -6,6 +6,7 @@ import javax.annotation.PostConstruct;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.ComponentScan;
 
 import io.github.educontessi.core.config.swagger.SwaggerConfig;
@@ -19,6 +20,7 @@ import io.github.educontessi.core.config.swagger.SwaggerConfig;
 @SpringBootApplication
 @ComponentScan(basePackages = { "io.github.educontessi" })
 @ComponentScan(basePackageClasses = { PortfolioBackendSpringBootApplication.class, SwaggerConfig.class })
+@EnableCaching
 public class PortfolioBackendSpringBootApplication {
 
 	@PostConstruct

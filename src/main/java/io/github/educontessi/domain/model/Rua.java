@@ -24,6 +24,8 @@ import javax.validation.constraints.Size;
 @Table(name = "rua_view")
 public class Rua extends BaseEntity {
 
+	private static final long serialVersionUID = 3511623237150920064L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;

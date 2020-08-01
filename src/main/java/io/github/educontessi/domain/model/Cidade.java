@@ -24,6 +24,8 @@ import javax.validation.constraints.Size;
 @Table(name = "cidade_view")
 public class Cidade extends BaseEntity {
 
+	private static final long serialVersionUID = -6368847171271292284L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;

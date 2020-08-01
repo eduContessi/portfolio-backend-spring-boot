@@ -24,6 +24,8 @@ import javax.validation.constraints.Size;
 @Table(name = "bairro_view")
 public class Bairro extends BaseEntity {
 
+	private static final long serialVersionUID = 3748521693061085460L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;

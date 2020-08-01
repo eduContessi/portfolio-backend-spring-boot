@@ -21,6 +21,8 @@ import javax.validation.constraints.Size;
 @Table(name = "pais_view")
 public class Pais extends BaseEntity {
 
+	private static final long serialVersionUID = 8377594893935381151L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;

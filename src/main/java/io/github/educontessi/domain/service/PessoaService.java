@@ -7,6 +7,7 @@ import java.util.Objects;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.Page;
@@ -38,6 +39,7 @@ public class PessoaService {
 		this.repository = repository;
 	}
 
+	@Cacheable(cacheNames = "PessoaService", key = "#root.method.name")
 	public List<Pessoa> findAll() {
 		return repository.findAll();
 	}

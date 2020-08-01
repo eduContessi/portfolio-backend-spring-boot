@@ -22,6 +22,10 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 
 import io.github.educontessi.domain.annotations.cpfcnpj.CPFCNPJ;
 import io.github.educontessi.domain.enums.Sexo;
@@ -38,6 +42,8 @@ import io.github.educontessi.domain.helpers.util.TipoMascara;
 @Entity
 @Table(name = "pessoa_view")
 public class Pessoa extends BaseEntity {
+
+	private static final long serialVersionUID = 2182889604831999780L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -59,6 +65,8 @@ public class Pessoa extends BaseEntity {
 	private String nomeRazao;
 
 	@Column(name = "data_cadastro")
+	@JsonSerialize(using = LocalDateSerializer.class)
+	@JsonDeserialize(using = LocalDateDeserializer.class)
 	private LocalDate dataCadastro;
 
 	@NotNull
@@ -67,6 +75,8 @@ public class Pessoa extends BaseEntity {
 	private String cpfCnpj;
 
 	@Column(name = "data_nascimento")
+	@JsonSerialize(using = LocalDateSerializer.class)
+	@JsonDeserialize(using = LocalDateDeserializer.class)
 	private LocalDate dataNascimento;
 
 	@Column(name = "rg_ie")
@@ -218,7 +228,7 @@ public class Pessoa extends BaseEntity {
 
 	public void setCidade(Cidade cidade) {
 		this.cidade = cidade;
-		this.cidadeId = cidade.getId();
+		// this.cidadeId = cidade.getId();
 	}
 
 	public Long getBairroId() {
@@ -235,7 +245,7 @@ public class Pessoa extends BaseEntity {
 
 	public void setBairro(Bairro bairro) {
 		this.bairro = bairro;
-		this.bairroId = bairro.getId();
+		// this.bairroId = bairro.getId();
 	}
 
 	public Long getRuaId() {
@@ -252,7 +262,7 @@ public class Pessoa extends BaseEntity {
 
 	public void setRua(Rua rua) {
 		this.rua = rua;
-		this.ruaId = rua.getId();
+		// this.ruaId = rua.getId();
 	}
 
 	public String getCep() {

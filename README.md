@@ -6,6 +6,7 @@ Projeto usado para colocar em prática meus conhecimentos nas tecnologias:
 - Spring Boot
 - Spring Data
 - Spring Test
+- Spring Data-Redis
 - Junit5
 - Flyway
 - REST

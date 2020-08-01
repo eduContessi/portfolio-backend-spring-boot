@@ -16,6 +16,8 @@ import io.github.educontessi.domain.helpers.util.TipoMascara;
  */
 public class ViaCepResposta extends BaseEntity {
 
+	private static final long serialVersionUID = 6654071816106652912L;
+
 	private String cep;
 	private Rua rua;
 	private Bairro bairro;

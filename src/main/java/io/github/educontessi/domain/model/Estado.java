@@ -24,6 +24,8 @@ import javax.validation.constraints.Size;
 @Table(name = "estado_view")
 public class Estado extends BaseEntity {
 
+	private static final long serialVersionUID = -1558660809629630787L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
